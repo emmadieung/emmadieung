@@ -1,4 +1,5 @@
 --CREATE SALES AMAZON TABLE AND IMPORT DATA FROM CSV FILE--
+--- https://www.kaggle.com/datasets/karkavelrajaj/amazon-sales-dataset/code--
 
 create table emmanguyen.amazondata 
 (
@@ -83,6 +84,7 @@ create table emmanguyen.amazon_product as
 select * from emmanguyen.amazon_product;
 
 
+
 --create table amazon_review from amazondata table--
 
 create table emmanguyen.amazon_review as
@@ -96,5 +98,4 @@ create table emmanguyen.amazon_review as
 	from emmanguyen.amazondata;
 
 select * from emmanguyen.amazon_review;
-
 
