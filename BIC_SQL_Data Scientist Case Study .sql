@@ -98,9 +98,8 @@ WITH CTE AS (
 		)
 	SELECT
 	year,
-		amount,
-		round(( (cast(amount as float) - LAG(amount, 1) OVER (ORDER BY year)) / LAG(amount, 1)
-	OVER (ORDER BY year)) * 100) as result
+	amount,
+	round(( (cast(amount as float) - LAG(amount, 1) OVER (ORDER BY year)) / LAG(amount, 1) OVER (ORDER BY year)) * 100) as result
 	from
 	CTE
 	order by result asc
@@ -123,11 +122,11 @@ WITH CTE AS (
 	group by year
 	order by year
 	)
+	
 	select
 	year,
 	amount,
-	round(( (cast(amount as float) - LAG(amount, 1) OVER (ORDER BY year)) / LAG(amount, 1)
-	OVER (ORDER BY year)) * 100) as result
+	round(( (cast(amount as float) - LAG(amount, 1) OVER (ORDER BY year)) / LAG(amount, 1) OVER (ORDER BY year)) * 100) as result
 	from
 	CTE
 	order by result asc
